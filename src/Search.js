@@ -10,6 +10,11 @@ function Search() {
     console.log(value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    Search(searchInput);
+  }
+
   return (
     <div className="search">
       <div className="page-header">
@@ -17,7 +22,7 @@ function Search() {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box">
+          <form className="form-group search-box" onSubmit={handleSubmit}>
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
